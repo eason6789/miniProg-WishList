@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/plans/plans",
+    "pages/result/result",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "计划事务清单",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

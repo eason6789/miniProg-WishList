@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="header">
+    <text class="title">制定你的计划事务清单</text>
+    <text class="tip">填写至少1个计划，默认1年后提醒</text>
+  </view>
+
+  <view class="plans-list">
+    <block wx:for="{{plans}}" wx:key="index">
+      <view class="plan-item">
+        <view class="plan-header">
+          <text class="plan-label">计划 {{index + 1}}</text>
+          <text class="plan-remove" bindtap="removePlan" data-index="{{index}}" wx:if="{{plans.length > 3}}">✕</text>
+        </view>
+        
+        <input 
+          class="plan-input" 
+          placeholder="写下你的计划事务...（至少3个字）" 
+          value="{{item.title}}"
+          bindinput="onTitleInput"
+          data-index="{{index}}"
+          maxlength="50"
+        />
+        
+        <picker mode="date" value="{{item.deadline}}" bindchange="onDateChange" data-index="{{index}}">
+          <view class="date-picker">
+            <text class="date-text">{{item.deadline || '设置截止日期'}}</text>
+            <text class="date-icon">📅</text>
+          </view>
+        </picker>
+        <picker mode="time" value="{{item.time}}" bindchange="onTimeChange" data-index="{{index}}">
+          <view class="time-picker">
+            <text class="time-text">{{item.time || '设置时间'}}</text>
+          </view>
+        </picker>
+      </view>
+    </block>
+  </view>
+
+  <view class="add-plan" bindtap="addPlan" wx:if="{{plans.length < 6}}">
+    <text>+ 添加计划</text>
+  </view>
+
+  <view class="action-bar">
+    <button 
+      class="submit-btn" 
+      bindtap="submitPlans"
+      disabled="{{!canSubmit}}"
+    >
+      <text>{{submitting ? '保存中...' : '保存计划'}}</text>
+    </button>
+  </view>
+
+  <view class="existing-plans" wx:if="{{existingPlans.length > 0}}">
+    <text class="section-title">📋 已有计划</text>
+    <block wx:for="{{existingPlans}}" wx:key="id">
+      <view class="existing-item">
+        <text class="existing-title">{{item.title}}</text>
+        <text class="existing-date">截止: {{item.deadline}}</text>
+      </view>
+    </block>
+  </view>
+</view>

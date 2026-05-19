@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <text class="title">计划事务清单</text>
+    <text class="subtitle">设定计划事务，定时提醒你</text>
+  </view>
+
+  <view class="content">
+    <button 
+      class="start-btn" 
+      bindtap="goToPlans"
+    >
+      <text>开始制定计划</text>
+    </button>
+  </view>
+
+  <view class="features">
+    <view class="feature-item">
+      <text class="feature-icon">📝</text>
+      <text class="feature-text">3-6 个计划</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">⏰</text>
+      <text class="feature-text">定时提醒</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">💌</text>
+      <text class="feature-text">微信通知</text>
+    </view>
+  </view>
+</view>

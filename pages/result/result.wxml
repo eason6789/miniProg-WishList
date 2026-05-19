@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="success-icon">🎉</view>
+  <text class="title">计划已保存</text>
+  <text class="message">到期时我会准时提醒你</text>
+
+  <view class="plans-summary">
+    <text class="summary-title">你的计划事务清单</text>
+    <block wx:for="{{plans}}" wx:key="index">
+      <view class="summary-item">
+        <text class="item-index">{{index + 1}}.</text>
+        <text class="item-title">{{item.title}}</text>
+        <text class="item-date">{{item.deadline}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="actions">
+    <button class="btn-secondary" bindtap="viewPlans">查看全部计划</button>
+    <button class="btn-primary" bindtap="goHome">返回首页</button>
+  </view>
+</view>
