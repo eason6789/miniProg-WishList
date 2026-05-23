@@ -4,7 +4,7 @@ App({
   globalData: {
     userId: null,
     openid: null,
-    apiBase: 'http://119.29.178.222:3000/api' // 服务器公网IP
+    apiBase: 'http://<YOUR_SERVER_IP>:3000/api' // TODO: Replace with your server IP
   },
 
   onLaunch() {
