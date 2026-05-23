@@ -30,3 +30,7 @@ The backend API server must:
 - Provide `POST /api/plans` -- accepts `{ userId, plans }`, returns `{ success }`
 - Provide `GET /api/plans/:userId` -- returns `{ success, data: [...] }`
 - Handle WeChat subscription message scheduling based on plan deadlines
+
+## 环境变量
+
+本项目为纯静态前端，**无需配置环境变量**。
