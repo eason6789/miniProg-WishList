@@ -4,7 +4,7 @@ App({
   globalData: {
     userId: null,
     openid: null,
-    apiBase: 'http://<YOUR_SERVER_IP>:3000/api' // TODO: Replace with your server IP
+    apiBase: 'https://tuteng3.site/wish/api' // 服务器公网域名（HTTPS，需微信后台白名单）
   },
 
   onLaunch() {
